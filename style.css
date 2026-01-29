@@ -1,17 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-        /* Color Palette Variables for reference */
-        /* Primary: #1F3A5F; Secondary: #4A6FA5; Accent: #4FB3A2; Text: #1E1E1E; Background: #F7F9FC */
     box-sizing: border-box;
 }
-        background-color: #F7F9FC;
-        color: #1E1E1E;
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fff;
-        background-color: #1F3A5F;
-        color: #F7F9FC;
+    padding-top: 80px; /* roughly navbar height */
+}
 
 /* Navigation Bar Styling */
 .navbar {
@@ -20,42 +17,44 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-        /* Color Palette Variables for reference */
-        /* Primary: #1F3A5F; Secondary: #4A6FA5; Accent: #4FB3A2; Text: #1E1E1E; Background: #F7F9FC */
+    padding: 15px 20px;
+    color: #000;
     position: fixed;    /* stick to top */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;      /* stay above content */
-        background-color: #F7F9FC;
-        color: #1E1E1E;
+    /* Always visible */
+    opacity: 1;
+    transform: none;
     transition: none;
 }
 .navbar.visible {
     /* No effect needed, navbar is always visible */
 }
 
-        background-color: #4A6FA5;
-        color: #4FB3A2;
+
+
 .nav-links {
     list-style: none;
-        color: #1E1E1E;
-        background-color: #F7F9FC;
+    display: flex;
+    margin: 0;
     padding: 0;
 }
 
-        background-color: #F7F9FC;
-        border-left: 4px solid #4A6FA5;
+.nav-links li {
+    margin-left: 20px;
+}
 
 .nav-item {
-        box-shadow: 0 14px 28px rgba(31, 58, 95, 0.18);
+    color: #000;
     text-decoration: none;
     padding: 14px 16px;
-        color: #1F3A5F;
+    font-weight: 500;
     letter-spacing: 0.5px;
     transition: color 0.2s;
-        background-color: #4FB3A2;
-        color: #1E1E1E;
+}
+
 .nav-item:hover {
     background-color: #f0f0f0;
     color: #0077cc;
@@ -64,30 +63,27 @@ body {
 
 .navbar {
     opacity: 0;
-        color: #F7F9FC;
-        text-decoration: none;
-        padding: 14px 16px;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        transition: color 0.2s, background 0.2s;
-        border-radius: 4px;
-        color: #1E1E1E;
-        background-color: #F7F9FC;
+    transform: translateY(-20px);
+    transition: 0.6s ease;
+}
+
+.navbar.visible {
+    opacity: 1;
     transform: translateY(0);
-        background-color: #4A6FA5;
-        color: #4FB3A2;
-        background-color: #F7F9FC;
-        color: #1E1E1E;
+}
+
+
+/* Hamburger button – hidden on desktop */
 /* Hamburger hidden on desktop */
 .menu-toggle {
     display: none;
-        background-color: #F7F9FC;
-        background-color: #F7F9FC;
+    background: none;
+    border: none;
     cursor: pointer;
     padding: 8px;
-        background-color: #F7F9FC;
-        border-left: 4px solid #4A6FA5;
-        box-shadow: 0 2px 8px rgba(31, 58, 95, 0.08);
+    flex-direction: column;
+    gap: 4px;
+}
 
 .menu-toggle span {
     width: 24px;
@@ -95,38 +91,37 @@ body {
     background-color: #333;
     border-radius: 999px;
     transition: 0.3s ease;
-        color: #1F3A5F;
+}
 
 /* Open = X icon */
 .menu-toggle.active span:nth-child(1) {
-        background-color: #4FB3A2;
-        color: #1E1E1E;
+    transform: translateY(6px) rotate(45deg);
+}
 .menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
-        background-color: #4A6FA5;
-        color: #F7F9FC;
+.menu-toggle.active span:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Mobile dropdown */
 @media (max-width: 768px) {
-        background-color: #F7F9FC;
+    .menu-toggle {
         display: flex;
     }
 
-        background-color: #F7F9FC;
-        color: #1E1E1E;
+    .nav-links {
+        position: absolute;
         top: 70px;
         right: 0;
         width: 100%;
-        color: #1E1E1E;
-        background-color: #F7F9FC;
+        background: #b9b5b8;
+        flex-direction: column;
 
         max-height: 0;
         overflow: hidden;
-        background-color: #1F3A5F;
-        color: #F7F9FC;
+        opacity: 0;
+        pointer-events: none;
 
         transition: 0.3s ease;
     }
@@ -287,7 +282,7 @@ body {
 
 .publications_section {
     padding: 60px 20px;
-    background-color: #f7f7fa;
+    background-color: #8f8f94;
     color: #1e293b;
 }
 
