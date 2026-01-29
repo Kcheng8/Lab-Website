@@ -1,200 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Hobson-Peters Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bibtexify.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <title>Peters Lab</title>
+
 </head>
+
 <body>
-	<!-- Navigation Bar -->
-	<nav class="navbar">
-		<div class="nav-left">
-			<img src="Images/lab_logo_placeholder.png" class="logo-img" alt="Lab Logo">
-			<span class="logo">Hobson-Peters Lab</span>
-		</div>
-		<button class="menu-toggle" id="menuToggle">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<ul class="nav-links" id="navLinks">
-			<li><a href="#home" class="nav-item">Home</a></li>
-			<li><a href="#about" class="nav-item">About</a></li>
-			<li><a href="#people" class="nav-item">People</a></li>
-			<li><a href="#research" class="nav-item">Research</a></li>
-			<li><a href="#publications" class="nav-item">Publications</a></li>
-			<li><a href="#contact" class="nav-item">Contact</a></li>
-		</ul>
-	</nav>
+    <!-- Navigation Bar --> 
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="Images/lab_logo.png" class="logo-img" alt="Peters Lab Logo">
+        <span class="logo">The Peters Molecular Arbovirology Laboratory</span>
+    </div>
 
-	<!-- Hero Section -->
-	<section class="hero_section" id="home">
-		<div class="section_container">
-			<div class="hero_container">
-				<div class="text_section">
-					<h2>Welcome to the Hobson-Peters Lab</h2>
-					<h3>Innovate • Discover • Collaborate</h3>
-					<p>Join our research group to explore cutting-edge science and make a difference in Molecular Arbovirology.</p>
-				</div>
-				<a href="#contact">
-					<button class="button">Contact Us</button>
-				</a>
-			</div>
-		</div>
-	</section>
+    <!-- Hamburger button -->
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-	<!-- About Section -->
-	<section class="about_us" id="about">
-		<div class="section_container">
-			<div class="about_container">
-				<div class="text_section">
-					<h2 class="section_title">About</h2>
-					<p>
-						<b>We are a research group at The School of Chemistry and Molecular Biosciences.</b>
-						Our mission is to advance knowledge in [Research Area] through innovative research, collaboration, and training the next generation of scientists.
-					</p>
-				</div>
-				<div class="image_section">
-					<img src="Images/lab_group_photo_placeholder.jpg" alt="Lab Group" class="about_img">
-				</div>
-			</div>
-			<div class="values_grid">
-				<div class="values_card_wrapper">
-					<div class="values_card">
-						<div class="values_card_front">
-							<h3>Our Mission</h3>
-						</div>
-						<div class="values_card_back">
-							<p>Advance research in molecular arbovirology and foster a collaborative, inclusive environment for discovery.</p>
-						</div>
-					</div>
-				</div>
-				<div class="values_card_wrapper">
-					<div class="values_card">
-						<div class="values_card_front">
-							<h3>Our People</h3>
-						</div>
-						<div class="values_card_back">
-							<p>A diverse group of scientists, students, and collaborators dedicated to pushing the boundaries of science.</p>
-						</div>
-					</div>
-				</div>
-				<div class="values_card_wrapper">
-					<div class="values_card">
-						<div class="values_card_front">
-							<h3>What We Do</h3>
-						</div>
-						<div class="values_card_back">
-							<p>Conduct research, publish findings, mentor students, and engage with the scientific community.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Dropdown menu -->
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#people" class="nav-item">People</a></li>
+        <li><a href="#research" class="nav-item">Research</a></li>
+        <li><a href="#publications" class="nav-item">Publications</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+    </ul>
+</nav>
 
-	<!-- People Section -->
-	<section class="team_section" id="people">
-		<div class="section_container">
-			<h2 class="section_title">People</h2>
-			<div class="team_grid">
-				<div class="team_card">
-					<img src="Images/person_placeholder.jpg" alt="PI" class="team_photo">
-					<h3 class="team_name">Dr. Jane Doe</h3>
-					<p class="team_role">Principal Investigator</p>
-					<p class="team_bio">Leads the lab and oversees all research activities.</p>
-				</div>
-				<div class="team_card">
-					<img src="Images/person_placeholder.jpg" alt="Postdoc" class="team_photo">
-					<h3 class="team_name">John Smith</h3>
-					<p class="team_role">Postdoctoral Researcher</p>
-					<p class="team_bio">Focuses on [Project Topic 1] and mentors students.</p>
-				</div>
-				<div class="team_card">
-					<img src="Images/person_placeholder.jpg" alt="PhD Student" class="team_photo">
-					<h3 class="team_name">Mary Johnson</h3>
-					<p class="team_role">PhD Student</p>
-					<p class="team_bio">Researches [Project Topic 2] and supports lab operations.</p>
-				</div>
-				<div class="team_card">
-					<img src="Images/person_placeholder.jpg" alt="Lab Member" class="team_photo">
-					<h3 class="team_name">More Members</h3>
-					<p class="team_role">Lab Members</p>
-					<p class="team_bio">See our full team on the lab website.</p>
-				</div>
-			</div>
-		</div>
-	</section>
+<section class="hero_section" id="home">
+    <div class="section_container">
+        <div class="hero_container">
+            <div class="text_section">
+                <h2>Welcome to the Hobson-Peters Molecular Arbovirology Research Lab</h2>
+                <h3>Innovate • Discover • Collaborate</h3>
+                <p>We are a research group at The University of Queensland focused on advancing knowledge in molecular arbovirology and vector-borne diseases. Explore our research, meet our team, and discover our latest publications.</p>
+            </div>
+            <a href="#contact">
+                <button class="button">Contact Us</button>
+            </a>
+        </div>
+    </div>
+</section>
 
-	<!-- Research Section -->
-	<section class="about_us" id="research">
-		<div class="section_container">
-			<h2 class="section_title">Research</h2>
-			<p>Our lab is engaged in projects such as [Project Topic 1], [Project Topic 2], and [Project Topic 3]. We use state-of-the-art techniques to address key questions in [Research Area].</p>
-		</div>
-	</section>
-
-	<!-- Publications Section -->
-	<section class="about_us" id="publications">
-		<div class="section_container">
-			<h2 class="section_title">Publications</h2>
-			<ul>
-				<li>Doe, J. et al. (2025). Title of Paper 1. <em>Journal Name</em>.</li>
-				<li>Smith, J. et al. (2024). Title of Paper 2. <em>Another Journal</em>.</li>
-				<li>More publications...</li>
-			</ul>
-		</div>
+    <!-- About Section -->
+<section class="about_us reveal" id="about">
+    <div class="section_container">
+        <div class="about_container">
+            <div class="text_section">
+                <h2 class="section_title">About the Lab</h2>
+                <p>
+                    <b>The Hobson-Peters Lab is based at The School of Chemistry and Molecular Biosciences, UQ.</b>
+                    Our mission is to advance the understanding of mosquito-borne viruses and their vectors through innovative research, collaboration, and training the next generation of scientists.
+                </p>
+            </div>
+            <div class="image_section">
+                <img src="Images/lab_group_photo.jpg"
+                    alt="Hobson-Peters Lab Group"
+                    class="about_img">
+            </div>
+        </div>
+    </div>
+</section>
 
 
-	<!-- Contact Section -->
-	<section class="contact_section" id="contact">
-		<div class="section_container">
-			<h2 class="section_title">Contact Us</h2>
-			<p class="contact_text">Interested in our research or want to join the lab? Reach out to us below!</p>
-			<form class="contact_form" action="#" method="POST">
-				<div class="input_group">
-					<label>Name</label>
-					<input type="text" name="name" required>
-				</div>
-				<div class="input_group">
-					<label>Email</label>
-					<input type="email" name="email" required>
-				</div>
-				<div class="input_group">
-					<label>Message</label>
-					<textarea name="message" rows="5" required></textarea>
-				</div>
-				<button class="button submit_button" type="submit">Send Message</button>
-			</form>
-		</div>
-	</section>
+<section class="team_section" id="people">
+    <div class="section_container">
+        <h2 class="section_title">Meet the Lab Team</h2>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="footer_container">
-			<div class="footer_section footer_brand">
-				<img src="Images/lab_logo_placeholder.png" alt="Lab Logo" class="footer_logo">
-				<h3 class="footer_title">Placeholder Lab Group</h3>
-				<p class="footer_subtext">Innovate • Discover • Collaborate</p>
-			</div>
-			<div class="footer_section">
-				<h4>Quick Links</h4>
-				<ul class="footer_links">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#people">People</a></li>
-					<li><a href="#research">Research</a></li>
-					<li><a href="#publications">Publications</a></li>
-					<li><a href="#sponsors">Sponsors</a></li>
-				</ul>
-			</div>
-			<div class="footer_section">
-				<h4>Contact</h4>
-				<p>Email: placeholder@university.edu</p>
-				<p>School of Chemistry and Molecular Bioscience</p>
-			</div>
-		</div>
-		<div class="footer_bottom">
-			&copy; 2026 Hobson-Peters Lab. All Rights Reserved.
-		</div>
+        <h3 class="team_group_title">Principal Investigators</h3>
+        <div class="team_grid">
+            <div class="team_card">
+                <img src="Images/pi_photo.jpg" alt="Principal Investigator" class="team_photo">
+                <h3 class="team_name">Associate Prof. Jody Hobson-Peters</h3>
+                <p class="team_role">Principal Investigator</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <div class="team_card">
+                <img src="Images/pi_photo.jpg" alt="Principal Investigator" class="team_photo">
+                <h3 class="team_name">Emeritus Professor Roy Hall</h3>
+                <p class="team_role">Principal Investigator</p>
+                <p class="team_bio">Bio</p>
+            </div>
+        </div>
+
+        <h3 class="team_group_title">Postdoctoral Researchers</h3>
+        <div class="team_grid">
+            <div class="team_card">
+                <img src="Images/postdoc1.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <h3 class="team_name">Dr. Jessica J. Harrison</h3>
+                <p class="team_role">Postdoctoral Researcher</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <div class="team_card">
+                <img src="Images/phd_student1.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <h3 class="team_name">Dr. Henry De Malmanche</h3>
+                <p class="team_role">Postdoctoral Researcher</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <div class="team_card">
+                <img src="Images/phd_student2.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <h3 class="team_name">Dr. Ryan A. Johnston</h3>
+                <p class="team_role">Postdoctoral Researcher</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <div class="team_card">
+                <img src="Images/phd_student2.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <h3 class="team_name">Dr. Hong Yi (Alpha) Lau</h3>
+                <p class="team_role">Postdoctoral Researcher</p>
+                <p class="team_bio">Bio</p>
+            </div>
+        </div>
+
+        <h3 class="team_group_title">PhD Students</h3>
+        <div class="team_grid">
+            <div class="team_card">
+                <img src="Images/phd_student2.jpg" alt="PhD Student" class="team_photo">
+                <h3 class="team_name">Christopher Ang</h3>
+                <p class="team_role">PhD Student</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <div class="team_card">
+                <img src="Images/phd_student2.jpg" alt="PhD Student" class="team_photo">
+                <h3 class="team_name">Madeline Thompson</h3>
+                <p class="team_role">PhD Student</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <!-- Add more PhD students as needed -->
+        </div>
+
+        <h3 class="team_group_title">Research Assistant</h3>
+        <div class="team_grid">
+            <!-- Example Masters student -->
+            <div class="team_card">
+                <img src="Images/masters_student1.jpg" alt="Masters Student" class="team_photo">
+                <h3 class="team_name">Firstname Lastname</h3>
+                <p class="team_role">Masters Student</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <!-- Add more Masters students as needed -->
+        </div>
+
+        <h3 class="team_group_title">Undergraduate Students</h3>
+        <div class="team_grid">
+            <!-- Example Undergraduate student -->
+            <div class="team_card">
+                <img src="Images/undergrad_student1.jpg" alt="Undergraduate Student" class="team_photo">
+                <h3 class="team_name">Firstname Lastname</h3>
+                <p class="team_role">Undergraduate Student</p>
+                <p class="team_bio">Bio</p>
+            </div>
+            <!-- Add more Undergraduate students as needed -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Publications Section -->
+<section class="publications_section" id="publications">
+        <div class="section_container">
+                <h2 class="section_title">Publications</h2>
+                <div id="bibtex_display"></div>
+                <!-- BibTeX entries will be loaded dynamically from publications.bib.html -->
+        </div>
+</section>
+
+<!-- Publications Section -->
+<section class="contact_section" id="contact">
+    <div class="section_container">
+        <h2 class="section_title">Contact</h2>
+        <p class="contact_text">
+            Interested in collaborating, joining the lab, or learning more about our research? Send us a message below.
+        </p>
+        <form class="contact_form" action="#" method="POST">
+            <div class="input_group">
+                <label>Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="input_group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="input_group">
+                <label>Message</label>
+                <textarea name="message" rows="5" required></textarea>
+            </div>
+            <button class="button submit_button" type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer_container">
+            <!-- Left side: Logo + Name -->
+            <div class="footer_section footer_brand">
+                <img src="Images/lab_logo.png" alt="Hobson-Peters Lab Logo" class="footer_logo">
+                <h3 class="footer_title">Hobson-Peters Research Lab</h3>
+                <p class="footer_subtext">Innovate • Discover • Collaborate</p>
+            </div>
+            <!-- Middle: Quick Links -->
+            <div class="footer_section">
+                <h4>Quick Links</h4>
+                <ul class="footer_links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#people">People</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                </ul>
+            </div>
+            <!-- Right: Contact -->
+            <div class="footer_section">
+                <h4>Contact</h4>
+                <div class="footer_socials">
+                    <a href="mailto:j.hobsonpeters@uq.edu.au" class="social_icon">Email</a>
+                    <!-- Add more contact/social links as needed -->
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="footer_bottom">
+            © 2026 Hobson-Peters Research Lab. All Rights Reserved.
+        </div>
+    </footer>
+        <script src="script.js"></script>
+        <script src="bibtexify.js"></script>
+        <script>
+            $(document).ready(function() {
+                fetch('publications.bib.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        // Create a temporary container to parse the HTML
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = data;
+                        // Find the script tag with type="text/bibtex"
+                        const bibtexScript = tempDiv.querySelector('script[type="text/bibtex"]');
+                        if (bibtexScript) {
+                            // Insert the script into the DOM so Bibtexify can find it
+                            document.body.appendChild(bibtexScript);
+                            // Call bibtexify with the correct parameters
+                            setTimeout(function() {
+                                bibtexify("#bibtex_input", "bibtex_display");
+                            }, 100);
+                        }
+                    });
+            });
+        </script>
+</body>
+</html>

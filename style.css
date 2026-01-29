@@ -1,88 +1,93 @@
 * {
     margin: 0;
     padding: 0;
+        /* Color Palette Variables for reference */
+        /* Primary: #1F3A5F; Secondary: #4A6FA5; Accent: #4FB3A2; Text: #1E1E1E; Background: #F7F9FC */
     box-sizing: border-box;
 }
+        background-color: #F7F9FC;
+        color: #1E1E1E;
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fff;
-    padding-top: 80px; /* roughly navbar height */
-}
+        background-color: #1F3A5F;
+        color: #F7F9FC;
 
 /* Navigation Bar Styling */
 .navbar {
-    background-color: #000;
+    background-color: #fff;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    color: #fff;
+        /* Color Palette Variables for reference */
+        /* Primary: #1F3A5F; Secondary: #4A6FA5; Accent: #4FB3A2; Text: #1E1E1E; Background: #F7F9FC */
     position: fixed;    /* stick to top */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;      /* stay above content */
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: 0.6s ease;
+        background-color: #F7F9FC;
+        color: #1E1E1E;
+    transition: none;
 }
 .navbar.visible {
-    opacity: 1;
-    transform: translateY(0);
+    /* No effect needed, navbar is always visible */
 }
 
-
-
+        background-color: #4A6FA5;
+        color: #4FB3A2;
 .nav-links {
     list-style: none;
-    display: flex;
-    margin: 0;
+        color: #1E1E1E;
+        background-color: #F7F9FC;
     padding: 0;
 }
 
-.nav-links li {
-    margin-left: 20px;
-}
+        background-color: #F7F9FC;
+        border-left: 4px solid #4A6FA5;
 
 .nav-item {
-    color: #fff;
+        box-shadow: 0 14px 28px rgba(31, 58, 95, 0.18);
     text-decoration: none;
     padding: 14px 16px;
-    font-weight: 500;
+        color: #1F3A5F;
     letter-spacing: 0.5px;
     transition: color 0.2s;
-}
-
+        background-color: #4FB3A2;
+        color: #1E1E1E;
 .nav-item:hover {
-    background-color: #222;
-    color: #ffcc00;
+    background-color: #f0f0f0;
+    color: #0077cc;
     border-radius: 4px;
 }
 
 .navbar {
     opacity: 0;
-    transform: translateY(-20px);
-    transition: 0.6s ease;
-}
-
-.navbar.visible {
-    opacity: 1;
+        color: #F7F9FC;
+        text-decoration: none;
+        padding: 14px 16px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: color 0.2s, background 0.2s;
+        border-radius: 4px;
+        color: #1E1E1E;
+        background-color: #F7F9FC;
     transform: translateY(0);
-}
-
-
-/* Hamburger button – hidden on desktop */
+        background-color: #4A6FA5;
+        color: #4FB3A2;
+        background-color: #F7F9FC;
+        color: #1E1E1E;
 /* Hamburger hidden on desktop */
 .menu-toggle {
     display: none;
-    background: none;
-    border: none;
+        background-color: #F7F9FC;
+        background-color: #F7F9FC;
     cursor: pointer;
     padding: 8px;
-    flex-direction: column;
-    gap: 4px;
-}
+        background-color: #F7F9FC;
+        border-left: 4px solid #4A6FA5;
+        box-shadow: 0 2px 8px rgba(31, 58, 95, 0.08);
 
 .menu-toggle span {
     width: 24px;
@@ -90,37 +95,38 @@ body {
     background-color: #333;
     border-radius: 999px;
     transition: 0.3s ease;
-}
+        color: #1F3A5F;
 
 /* Open = X icon */
 .menu-toggle.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-}
+        background-color: #4FB3A2;
+        color: #1E1E1E;
 .menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
-.menu-toggle.active span:nth-child(3) {
+        background-color: #4A6FA5;
+        color: #F7F9FC;
     transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Mobile dropdown */
 @media (max-width: 768px) {
-    .menu-toggle {
+        background-color: #F7F9FC;
         display: flex;
     }
 
-    .nav-links {
-        position: absolute;
+        background-color: #F7F9FC;
+        color: #1E1E1E;
         top: 70px;
         right: 0;
         width: 100%;
-        background: #b9b5b8;
-        flex-direction: column;
+        color: #1E1E1E;
+        background-color: #F7F9FC;
 
         max-height: 0;
         overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
+        background-color: #1F3A5F;
+        color: #F7F9FC;
 
         transition: 0.3s ease;
     }
@@ -197,6 +203,24 @@ body {
     align-items: center;
 }
 
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
 /* Hero Section */
 .hero_section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/Research night.jpeg') center/cover no-repeat;
@@ -240,7 +264,7 @@ body {
 }
 
 .button {
-    background-color: #762d78;
+    background-color: #0057b8;
     color: #ffffff;
     padding: 12px 24px;
     border: none;
@@ -252,7 +276,19 @@ body {
 }
 
 .button:hover {
-    background-color: #5a1f5c;
+    background-color: #003974;
+}
+/* Research Section */
+.research_section {
+    padding: 60px 20px;
+    background-color: #f7f7fa;
+    color: #1e293b;
+}
+
+.publications_section {
+    padding: 60px 20px;
+    background-color: #f7f7fa;
+    color: #1e293b;
 }
 
 /* Text Colour */
@@ -414,7 +450,7 @@ body {
 .team_section {
     padding: 60px 20px;
     color: #1e293b;
-    background-color: #ffffff;
+    background-color: #c7c5c5;
 }
 
 .team_section .section_title {
