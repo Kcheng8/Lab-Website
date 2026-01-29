@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/bibtexify.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <title>Peters Lab</title>
 
 </head>
@@ -16,7 +12,6 @@
     <!-- Navigation Bar --> 
 <nav class="navbar">
     <div class="nav-left">
-        <img src="Images/lab_logo.png" class="logo-img" alt="Peters Lab Logo">
         <span class="logo">The Peters Molecular Arbovirology Laboratory</span>
     </div>
 
@@ -81,13 +76,13 @@
         <h3 class="team_group_title">Principal Investigators</h3>
         <div class="team_grid">
             <div class="team_card">
-                <img src="Images/pi_photo.jpg" alt="Principal Investigator" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Principal Investigator" class="team_photo">
                 <h3 class="team_name">Associate Prof. Jody Hobson-Peters</h3>
                 <p class="team_role">Principal Investigator</p>
                 <p class="team_bio">Bio</p>
             </div>
             <div class="team_card">
-                <img src="Images/pi_photo.jpg" alt="Principal Investigator" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Principal Investigator" class="team_photo">
                 <h3 class="team_name">Emeritus Professor Roy Hall</h3>
                 <p class="team_role">Principal Investigator</p>
                 <p class="team_bio">Bio</p>
@@ -97,25 +92,25 @@
         <h3 class="team_group_title">Postdoctoral Researchers</h3>
         <div class="team_grid">
             <div class="team_card">
-                <img src="Images/postdoc1.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Postdoctoral Researcher" class="team_photo">
                 <h3 class="team_name">Dr. Jessica J. Harrison</h3>
                 <p class="team_role">Postdoctoral Researcher</p>
                 <p class="team_bio">Bio</p>
             </div>
             <div class="team_card">
-                <img src="Images/phd_student1.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Postdoctoral Researcher" class="team_photo">
                 <h3 class="team_name">Dr. Henry De Malmanche</h3>
                 <p class="team_role">Postdoctoral Researcher</p>
                 <p class="team_bio">Bio</p>
             </div>
             <div class="team_card">
-                <img src="Images/phd_student2.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Postdoctoral Researcher" class="team_photo">
                 <h3 class="team_name">Dr. Ryan A. Johnston</h3>
                 <p class="team_role">Postdoctoral Researcher</p>
                 <p class="team_bio">Bio</p>
             </div>
             <div class="team_card">
-                <img src="Images/phd_student2.jpg" alt="Postdoctoral Researcher" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Postdoctoral Researcher" class="team_photo">
                 <h3 class="team_name">Dr. Hong Yi (Alpha) Lau</h3>
                 <p class="team_role">Postdoctoral Researcher</p>
                 <p class="team_bio">Bio</p>
@@ -125,13 +120,13 @@
         <h3 class="team_group_title">PhD Students</h3>
         <div class="team_grid">
             <div class="team_card">
-                <img src="Images/phd_student2.jpg" alt="PhD Student" class="team_photo">
+                <img src="Images/Placeholder.png" alt="PhD Student" class="team_photo">
                 <h3 class="team_name">Christopher Ang</h3>
                 <p class="team_role">PhD Student</p>
                 <p class="team_bio">Bio</p>
             </div>
             <div class="team_card">
-                <img src="Images/phd_student2.jpg" alt="PhD Student" class="team_photo">
+                <img src="Images/Placeholder.png" alt="PhD Student" class="team_photo">
                 <h3 class="team_name">Madeline Thompson</h3>
                 <p class="team_role">PhD Student</p>
                 <p class="team_bio">Bio</p>
@@ -143,7 +138,7 @@
         <div class="team_grid">
             <!-- Example Masters student -->
             <div class="team_card">
-                <img src="Images/masters_student1.jpg" alt="Masters Student" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Masters Student" class="team_photo">
                 <h3 class="team_name">Firstname Lastname</h3>
                 <p class="team_role">Masters Student</p>
                 <p class="team_bio">Bio</p>
@@ -155,7 +150,7 @@
         <div class="team_grid">
             <!-- Example Undergraduate student -->
             <div class="team_card">
-                <img src="Images/undergrad_student1.jpg" alt="Undergraduate Student" class="team_photo">
+                <img src="Images/Placeholder.png" alt="Undergraduate Student" class="team_photo">
                 <h3 class="team_name">Firstname Lastname</h3>
                 <p class="team_role">Undergraduate Student</p>
                 <p class="team_bio">Bio</p>
@@ -170,10 +165,72 @@
 <section class="publications_section" id="publications">
         <div class="section_container">
                 <h2 class="section_title">Publications</h2>
-                <div id="bibtex_display"></div>
-                <!-- BibTeX entries will be loaded dynamically from publications.bib.html -->
+                
+                <!-- Search Bar -->
+                <div class="publications_search">
+                    <input 
+                        type="text" 
+                        id="pubSearch" 
+                        class="search_input" 
+                        placeholder="Search by title, author, or year..."
+                    >
+                </div>
+
+                <!-- Publications Grid -->
+                <div id="articles" class="articles_grid"></div>
+
+                <script>
+        let allPublications = [];
+
+        fetch('references.json')
+            .then(response => response.json())
+            .then(entries => {
+                allPublications = entries;
+                renderPublications(entries);
+                
+                // Setup search functionality
+                const searchInput = document.getElementById('pubSearch');
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const filtered = allPublications.filter(entry => {
+                        const title = (entry.title || '').toLowerCase();
+                        const author = (entry.author || '').toLowerCase();
+                        const year = (entry.year || '').toLowerCase();
+                        return title.includes(query) || author.includes(query) || year.includes(query);
+                    });
+                    renderPublications(filtered);
+                });
+            })
+            .catch(error => {
+                document.getElementById('articles').innerHTML = 
+                    '<p style="color: var(--text); grid-column: 1/-1;">Error loading publications. Please ensure references.json exists.</p>';
+            });
+
+        function renderPublications(entries) {
+            const container = document.getElementById('articles');
+            
+            if (entries.length === 0) {
+                container.innerHTML = '<p style="color: var(--text); grid-column: 1/-1; text-align: center;">No publications found.</p>';
+                return;
+            }
+
+            container.innerHTML = entries.map(entry => `
+                <div class="publication_card">
+                    <div class="pub_year">${entry.year || 'N/A'}</div>
+                    <div class="pub_title">${entry.title || 'Untitled'}</div>
+                    <div class="pub_authors">${entry.author || 'Unknown'}</div>
+                    <div class="pub_journal">
+                        ${entry.journal || ''}${entry.journal && entry.volume ? ', ' : ''}${entry.volume || ''}
+                        ${entry.pages ? ` pp. ${entry.pages}` : ''}
+                    </div>
+                    ${entry.doi ? `<div class="pub_doi"><a href="https://doi.org/${entry.doi}" target="_blank">DOI: ${entry.doi}</a></div>` : ''}
+                </div>
+            `).join('');
+        }
+    </script>
         </div>
 </section>
+
 
 <!-- Publications Section -->
 <section class="contact_section" id="contact">
@@ -237,27 +294,5 @@
         </div>
     </footer>
         <script src="script.js"></script>
-        <script src="bibtexify.js"></script>
-        <script>
-            $(document).ready(function() {
-                fetch('publications.bib.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        // Create a temporary container to parse the HTML
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = data;
-                        // Find the script tag with type="text/bibtex"
-                        const bibtexScript = tempDiv.querySelector('script[type="text/bibtex"]');
-                        if (bibtexScript) {
-                            // Insert the script into the DOM so Bibtexify can find it
-                            document.body.appendChild(bibtexScript);
-                            // Call bibtexify with the correct parameters
-                            setTimeout(function() {
-                                bibtexify("#bibtex_input", "bibtex_display");
-                            }, 100);
-                        }
-                    });
-            });
-        </script>
 </body>
 </html>
