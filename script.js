@@ -56,7 +56,7 @@ function initHamburgerMenu() {
 }
 
 /**
- * Initialize flip animations for sponsor and values cards
+ * Initialize flip animations for sponsor, values, and team cards
  */
 function initCardFlips() {
     // Sponsor cards
@@ -66,6 +66,11 @@ function initCardFlips() {
 
     // Values cards
     document.querySelectorAll(".values_card_wrapper").forEach(card => {
+        card.addEventListener("click", () => card.classList.toggle("flipped"));
+    });
+
+    // Team cards
+    document.querySelectorAll(".team_card_wrapper").forEach(card => {
         card.addEventListener("click", () => card.classList.toggle("flipped"));
     });
 }
