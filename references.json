@@ -88,5 +88,41 @@
     "pages": "45-14",
     "ENTRYTYPE": "article",
     "ID": "BellMikaelaG.2024SroY"
+  },
+  {
+    "keywords": "13/106 ;  13/109 ;  13/31 ;  45/70 ;  45/77 ;  45/88 ;  45/90 ;  45/91 ;  631/326/596/2557 ;  631/326/596/4130 ;  RNA viruses ;  Coronaviruses ;  COVID-19 ;  Fragments ;  Genetics ;  Genomes ;  Humanities and Social Sciences ;  Insects ;  Mammalian cells ;  multidisciplinary ;  Multidisciplinary Sciences ;  Norovirus ;  Pandemics ;  Science ;  Science & Technology ;  Science & Technology - Other Topics ;  Science (multidisciplinary) ;  Severe acute respiratory syndrome coronavirus 2 ;  Transfection ;  Viral diseases ;  Viruses",
+    "journal": "Nature communications",
+    "issn": "2041-1723",
+    "copyright": "The Author(s) 2021",
+    "address": "London",
+    "author": "Amarilla, Alberto A. and Sng, Julian D. J. and Parry, Rhys and Deerain, Joshua M. and Potter, James R. and Setoh, Yin Xiang and Rawle, Daniel J. and Le, Thuy T. and Modhiran, Naphak and Wang, Xiaohui and Peng, Nias Y. G. and Torres, Francisco J. and Pyke, Alyssa and Harrison, Jessica J. and Freney, Morgan E. and Liang, Benjamin and McMillan, Christopher L. D. and Cheung, Stacey T. M. and Guevara, Darwin J. Da Costa and Hardy, Joshua M. and Bettington, Mark and Muller, David A. and Coulibaly, Fasséli and Moore, Frederick and Hall, Roy A. and Young, Paul R. and Mackenzie, Jason M. and Hobson-Peters, Jody and Suhrbier, Andreas and Watterson, Daniel and Khromykh, Alexander A.",
+    "abstract": "The current COVID-19 pandemic is caused by the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). We demonstrate that despite the large size of the viral RNA genome (~30 kb), infectious full-length cDNA is readily assembled in vitro by a circular polymerase extension reaction (CPER) methodology without the need for technically demanding intermediate steps. Overlapping cDNA fragments are generated from viral RNA and assembled together with a linker fragment containing CMV promoter into a circular full-length viral cDNA in a single reaction. Transfection of the circular cDNA into mammalian cells results in the recovery of infectious SARS-CoV-2 virus that exhibits properties comparable to the parental virus in vitro and in vivo. CPER is also used to generate insect-specific Casuarina virus with ~20 kb genome and the human pathogens Ross River virus (Alphavirus) and Norovirus (Calicivirus), with the latter from a clinical sample. Additionally, reporter and mutant viruses are generated and employed to study virus replication and virus-receptor interactions.\nHere the authors describe a simple reverse genetics method that relies on overlapping cDNA fragments for generation of positive-strand viruses including SARS-CoV-2 and characterize them in vitro and in vivo.",
+    "publisher": "Nature Publishing Group UK",
+    "pages": "3431-15",
+    "year": "2021",
+    "volume": "12",
+    "number": "1",
+    "title": "A versatile reverse genetics platform for SARS-CoV-2 and other positive-strand RNA viruses",
+    "language": "eng",
+    "ENTRYTYPE": "article",
+    "ID": "AmarillaAlbertoA.2021Avrg"
+  },
+  {
+    "keywords": "631/250 ;  631/326 ;  631/61 ;  Dengue fever ;  Vaccine ;  Antibodies ;  Antigens ;  Biomedical and Life Sciences ;  Biomedicine ;  Immune response ;  Immunology ;  Infections ;  Infectious Diseases ;  Life Sciences & Biomedicine ;  Medical Microbiology ;  Medicine Research & Experimental ;  Potassium ;  Public Health ;  Research & Experimental Medicine ;  Science & Technology ;  Tropical environments ;  Vaccines ;  Vector-borne diseases ;  Virology ;  Viruses",
+    "journal": "npj vaccines",
+    "issn": "2059-0105",
+    "copyright": "The Author(s) 2025",
+    "address": "London",
+    "author": "Choo, Jovin J. Y. and McMillan, Christopher L. D. and Scott, Connor A. P. and Harrison, Jessica J. and Watterson, Daniel and Hall, Roy A. and Young, Paul R. and Hobson-Peters, Jody and Muller, David A.",
+    "abstract": "Dengue virus (DENV) is endemic throughout the tropical regions of the world. Due to the risk posed to the population living in dengue-endemic areas, the development of a dengue vaccine has been considered a high priority by the WHO for the past 50 years. The development of a new chimeric viral platform, based on the insect-specific orthoflavivirus, Binjari virus (BinJV) has facilitated the production of multiple orthoflavivirus vaccine candidates. This study describes the evaluation of four candidate chimeric dengue virus vaccines (BinJ/DENV-prME) delivered as either a monovalent or tetravalent vaccine formulations via an alternative delivery method, the high-density microarray patch (HD-MAP). These chimeric viruses elicited potent neutralising antibodies against both homologous and heterologous serotypes and were raised to equal levels, with no immunodominance observed for any serotype. When coupled with the HD-MAP, enhanced antibody kinetics were observed, resulting in higher levels of neutralising antibodies elicited following a single dose.",
+    "publisher": "Nature Publishing Group UK",
+    "pages": "245-9",
+    "year": "2025",
+    "volume": "10",
+    "number": "1",
+    "title": "Tetravalent microprojection-based dengue chimeric virus vaccine raises potent neutralising antibodies in mice",
+    "language": "eng",
+    "ENTRYTYPE": "article",
+    "ID": "ChooJovinJ.Y.2025Tmdc"
   }
 ]
