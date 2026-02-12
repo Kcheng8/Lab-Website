@@ -512,6 +512,30 @@ body {
     margin-bottom: 15px;
 }
 
+.aedes_image {
+    max-width: 300px;
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.attribution {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.attribution a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
 .research_card:nth-child(3) .research_card_image {
     width: 50%;
     display: block;
