@@ -644,6 +644,7 @@ body {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 20px;
+    color: var(--primary);
 }
 
 /* Sub-headings: T3, Officers, General Executives */
@@ -652,6 +653,7 @@ body {
     margin-bottom: 15px;
     font-size: 1.5rem;
     text-align: center;
+    color: var(--primary);
 }
 
 /* Grid layout for team cards */
@@ -774,13 +776,13 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 4px;
-    color: #1e293b;
+    color: var(--primary);
 }
 
 .team_role {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--secondary);
     margin-bottom: 8px;
 }
 
@@ -789,7 +791,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.9;
-    color: #1e293b;
+    color: var(--secondary);
 }
 
 /* Mobile tweaks */
