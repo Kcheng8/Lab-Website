@@ -1160,7 +1160,7 @@ body {
     padding-top: 10px;
 }
 
-.about-label {
+.about-text p.about-label {
     color: var(--accent);
     font-size: 0.95rem;
     font-weight: 700;
@@ -1214,7 +1214,7 @@ body {
 }
 
 /* Orange theme for Roy's section */
-.about-reverse .about-label {
+.about-reverse .about-text p.about-label {
     color: #F87060;
 }
 
