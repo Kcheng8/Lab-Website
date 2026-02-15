@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHamburgerMenu();
     initCardFlips();
     initGallerySlider();
+    initAlumniCarousel();
 });
 
 // Handle scroll reveal animations
@@ -109,5 +110,87 @@ function handleScrollReveal() {
         if (rect.top < window.innerHeight - 50) {
             el.classList.add("visible");
         }
+    });
+}
+
+/**
+ * Initialize alumni carousel navigation
+ */
+function initAlumniCarousel() {
+    const alumniGrid = document.getElementById("alumniGrid");
+    const prevBtn = document.getElementById("alumniBtnPrev");
+    const nextBtn = document.getElementById("alumniBtnNext");
+
+    if (!alumniGrid || !prevBtn || !nextBtn) return;
+
+    const cardWidth = 280 + 30; // card width + gap
+    const duration = 600; // animation duration in ms
+    const cards = [...alumniGrid.querySelectorAll(".alumni_card")];
+    const totalCards = cards.length;
+
+    // Clone cards for seamless infinite loop
+    // Add clones at the end (forward direction)
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        alumniGrid.appendChild(clone);
+    });
+
+    // Add clones at the beginning (backward direction) in correct order
+    [...cards].reverse().forEach(card => {
+        const clone = card.cloneNode(true);
+        alumniGrid.insertBefore(clone, alumniGrid.firstChild);
+    });
+
+    // Start at the middle (original cards)
+    const originalStart = totalCards * cardWidth;
+    const originalEnd = originalStart + (totalCards * cardWidth);
+    alumniGrid.scrollLeft = originalStart;
+
+    function smoothScroll(element, scrollAmount, duration) {
+        const start = element.scrollLeft;
+        const target = start + scrollAmount;
+        const distance = scrollAmount;
+        const startTime = performance.now();
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+
+        function scroll(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = easeInOutQuad(progress);
+            element.scrollLeft = start + distance * ease;
+
+            if (progress < 1) {
+                requestAnimationFrame(scroll);
+            } else {
+                // After animation completes, check if we need to reset position
+                checkAndResetPosition();
+            }
+        }
+
+        requestAnimationFrame(scroll);
+    }
+
+    function checkAndResetPosition() {
+        const currentScroll = alumniGrid.scrollLeft;
+        
+        // If we've scrolled past the forward clones, jump back to original start
+        if (currentScroll >= originalEnd) {
+            alumniGrid.scrollLeft = originalStart;
+        }
+        // If we've scrolled before the backward clones, jump back to original end
+        else if (currentScroll < originalStart - totalCards * cardWidth) {
+            alumniGrid.scrollLeft = originalEnd - cardWidth;
+        }
+    }
+
+    prevBtn.addEventListener("click", () => {
+        smoothScroll(alumniGrid, -cardWidth, duration);
+    });
+
+    nextBtn.addEventListener("click", () => {
+        smoothScroll(alumniGrid, cardWidth, duration);
     });
 }
